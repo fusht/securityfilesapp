@@ -1,4 +1,6 @@
 from pathlib import Path
+
+import aiofiles
 from fastapi import FastAPI, UploadFile
 
 app = FastAPI()
@@ -16,7 +18,7 @@ def root():
 async def upload_file(file:UploadFile):
   file_path = UPLOAD_DIR/file.filename
 
-  with open(file_path, "wb") as output:
+  async with aiofiles. open(file_path, "wb") as output:
     output.write(await file.read())
 
   return{"filename":file.filename}
