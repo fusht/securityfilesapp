@@ -22,3 +22,9 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
+
+      - name: ruff
+        run: ruff check .
+
+      - name: pip-audit
+        run: pip-audit 
