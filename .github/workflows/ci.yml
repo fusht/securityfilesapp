@@ -30,4 +30,4 @@ jobs:
         run: pip-audit
 
       - name: Build docker image
-        run: docker buil -t my-fastapi-app
+        run: docker built -t my-fastapi-app
