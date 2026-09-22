@@ -27,4 +27,7 @@ jobs:
         run: ruff check .
 
       - name: pip-audit
-        run: pip-audit 
+        run: pip-audit
+
+      - name: Build docker image
+        run: docker buil -t my-fastapi-app
