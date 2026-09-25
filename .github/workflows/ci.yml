@@ -35,7 +35,6 @@ jobs:
       - name: checkup packages
         run: |
           docker run --rm my-fastapi-app python -c "import msgpack; print (msgpack.__version__)"
-          docker run --rm my-fastapi-app python -c "import setuptools; print (setuptools.__version__)"
 
       - name: docker image chekup
         uses: aquasecurity/trivy-action@master
@@ -45,4 +44,3 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           severity: CRITICAL,HIGH
-        
